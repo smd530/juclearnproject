@@ -1,5 +1,6 @@
 import org.omg.CORBA.TIMEOUT;
 
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -33,7 +34,7 @@ class MyData2 { // MyData.java ==> Mydata.class ==> JVM字节码
 
 public class VolatileDemo2 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         MyData2 myData2 = new MyData2();
 
         for (int i = 0; i < 20; i++) {
@@ -46,6 +47,7 @@ public class VolatileDemo2 {
                     myData2.addAtomic();
                 }
             }, String.valueOf(i)).start();
+
         }
 
 //        try {

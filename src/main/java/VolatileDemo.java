@@ -38,6 +38,7 @@ public class VolatileDemo {
         //第二个线程就是我们的main线程
         while(myData.number == 0) {
             //main线程一直在这里等待循环 知道number不在等于0
+//            System.out.println("main等待");
         }
 
         System.out.println(Thread.currentThread().getName()+" mission is over main get number value: " + myData.number);
