@@ -25,6 +25,8 @@ public class MyThreadPoolDemo {
                 TimeUnit.SECONDS, new LinkedBlockingDeque<>(3),
                 Executors.defaultThreadFactory(), new ThreadPoolExecutor.AbortPolicy());
 
+
+
     }
 
 //    ThreadPoolExecutor
@@ -47,13 +49,14 @@ public class MyThreadPoolDemo {
                 TimeUnit.SECONDS, new LinkedBlockingDeque<>(3),
                 Executors.defaultThreadFactory(), new ThreadPoolExecutor.AbortPolicy());
 
+
         // 拒绝策略 挨个试
         //ThreadPoolExecutor.AbortPolicy 默认
         //ThreadPoolExecutor.CallerRunsPolicy
         //ThreadPoolExecutor.DiscardOldestPolicy
         //ThreadPoolExecutor.DiscardPolicy
         try {
-            for (int i = 0; i < 100; i++) {
+            for (int i = 1; i <= 2; i++) {
                 threadPool.execute(() -> {
                     System.out.println(Thread.currentThread().getName()+"\t线程工作");
                 });

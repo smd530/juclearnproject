@@ -61,7 +61,7 @@ public class StreamDemo {
         }).limit(1).forEach(System.out::println);
 
         // 把花括号去掉 可以去掉return
-}
+    }
 
 }
 

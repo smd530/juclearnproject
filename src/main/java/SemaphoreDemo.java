@@ -9,14 +9,17 @@ import java.util.concurrent.TimeUnit;
  */
 public class SemaphoreDemo {
 
+    private static final int NUM = 3;
+    private static final int THREAD_NUM = 6;
+
     public static void main(String[] args) {
 
         //Semaphore(int permits)
 
         //模拟资源类 有三个空车位
-        Semaphore semaphore = new Semaphore(3);
+        Semaphore semaphore = new Semaphore(NUM);
 
-        for (int i = 0; i < 6; i++) {
+        for (int i = 1; i <= THREAD_NUM; i++) {
             new Thread(() -> {
                 try {
                      // 占用
